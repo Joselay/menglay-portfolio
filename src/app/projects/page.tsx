@@ -3,47 +3,59 @@ import Image from 'next/image'
 
 import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
-import logoAnimaginary from '@/images/logos/animaginary.svg'
-import logoCosmos from '@/images/logos/cosmos.svg'
-import logoHelioStream from '@/images/logos/helio-stream.svg'
-import logoOpenShuttle from '@/images/logos/open-shuttle.svg'
-import logoPlanetaria from '@/images/logos/planetaria.svg'
+import logoJelly from '@/images/logos/jelly.svg'
+import logoGoody from '@/images/logos/goody.jpg'
+import logoNoIcon from '@/images/logos/no-icon.png'
+import logoFoodfarm from '@/images/logos/foodfarm.svg'
 
 const projects = [
   {
-    name: 'Planetaria',
+    name: 'Goody - Mobile',
     description:
-      'Creating technology to empower civilians to explore space on their own terms.',
-    link: { href: 'http://planetaria.tech', label: 'planetaria.tech' },
-    logo: logoPlanetaria,
+      'The first eCommerce mobile app I developed with teams, focused on selling skincare products and enhancing the shopping experience.',
+    link: { href: '#', label: 'github.com' },
+    logo: logoGoody,
   },
   {
-    name: 'Animaginary',
+    name: 'Jelly - Mobile',
     description:
-      'High performance web animation library, hand-written in optimized WASM.',
+      'Jelly is an all-in-one app that successfully streamlined cinema ticket booking for Legend Cinema, Major Cineplex, and Prime Cineplex.',
     link: { href: '#', label: 'github.com' },
-    logo: logoAnimaginary,
+    logo: logoJelly,
   },
   {
-    name: 'HelioStream',
+    name: 'FoodFarm - Web',
     description:
-      'Real-time video streaming library, optimized for interstellar transmission.',
-    link: { href: '#', label: 'github.com' },
-    logo: logoHelioStream,
+      'An e-commerce app built with vanilla PHP for seamless product management through CRUD operations.',
+    link: { href: 'https://github.com/Joselay/FoodFarm', label: 'github.com' },
+    logo: logoFoodfarm,
   },
   {
-    name: 'cosmOS',
+    name: 'SaaS Task Management - Web',
     description:
-      'The operating system that powers our Planetaria space shuttles.',
-    link: { href: '#', label: 'github.com' },
-    logo: logoCosmos,
+      'A task management app inspired by ClickUp, integrating AI for enhanced productivity and task organization.',
+    link: {
+      href: 'https://github.com/Joselay/jelly-saas',
+      label: 'github.com',
+    },
+    logo: logoNoIcon,
   },
   {
-    name: 'OpenShuttle',
+    name: 'NextStore - Web',
     description:
-      'The schematics for the first rocket I designed that successfully made it to orbit.',
-    link: { href: '#', label: 'github.com' },
-    logo: logoOpenShuttle,
+      'A frontend e-commerce web app built with Next.js, designed to sell products seamlessly online.',
+    link: { href: 'https://github.com/Joselay/nextstore', label: 'github.com' },
+    logo: logoNoIcon,
+  },
+  {
+    name: 'NextStore Admin - Web',
+    description:
+      'The admin backend for NextStore, built with Next.js, providing powerful management tools for e-commerce operations.',
+    link: {
+      href: 'https://github.com/Joselay/nextstore-admin',
+      label: 'github.com',
+    },
+    logo: logoNoIcon,
   },
 ]
 
@@ -67,7 +79,7 @@ export default function Projects() {
   return (
     <SimpleLayout
       title="Things I’ve made trying to put my dent in the universe."
-      intro="I’ve worked on tons of little projects over the years but these are the ones that I’m most proud of. Many of them are open-source, so if you see something that piques your interest, check out the code and contribute if you have ideas for how it can be improved."
+      intro="I've built and developed a wide range of projects over the years, but these are the ones I'm most proud of. Many are school projects, so feel free to explore the code and contribute if you have ideas for improvements or new features."
     >
       <ul
         role="list"
@@ -79,12 +91,17 @@ export default function Projects() {
               <Image
                 src={project.logo}
                 alt=""
-                className="h-8 w-8"
+                className="h-8 w-8 rounded-full object-cover object-left"
                 unoptimized
               />
             </div>
             <h2 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
-              <Card.Link href={project.link.href}>{project.name}</Card.Link>
+              <Card.Link
+                href={project.link.href}
+                target={project.link.href === '#' ? '_self' : '_blank'}
+              >
+                {project.name}
+              </Card.Link>
             </h2>
             <Card.Description>{project.description}</Card.Description>
             <p className="relative z-10 mt-6 flex text-sm font-medium text-zinc-400 transition group-hover:text-teal-500 dark:text-zinc-200">
