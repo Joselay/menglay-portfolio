@@ -10,8 +10,7 @@ export const metadata: Metadata = {
     template: '%s - Smae Tongmenglay',
     default: 'Menglay | Full-stack developer',
   },
-  description:
-    'I’m Smae Tongmenglay, a software designer and entrepreneur based in New York City. I’m the founder and CEO of Planetaria, where we develop technologies that empower regular people to explore space on their own terms.',
+  description: 'I’m Smae Tongmenglay, a full stack developer based in Cambodia',
   alternates: {
     types: {
       'application/rss+xml': `${process.env.NEXT_PUBLIC_SITE_URL}/feed.xml`,
